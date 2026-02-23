@@ -11,9 +11,11 @@ Este projeto foi desenvolvido como parte do desafio prático da **DIO (Digital I
 * **Ferramenta:** Medusa v2.2
 * **Rede:** Host-Only (Isolada)
 
-## 📂 Estrutura do Repositório
+## 📂 Estrutura do Projeto
 * [/wordlists](./wordlists): Dicionários de usuários e senhas utilizados.
-* [/imagens](./images): Capturas de tela das evidências dos testes.
+* [/images](./images): Evidências das invasões e validações.
+* [/scripts](./scripts): Script em Bash para automação dos ataques realizados.
+* [/config](./config): Detalhes da configuração de rede e ambiente das VMs.
 
 ---
 
