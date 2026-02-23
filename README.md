@@ -57,7 +57,7 @@ Login realizado com sucesso no servidor de arquivos via terminal.
 
 ### 4. Ataque a Aplicação Web (DVWA)
 O Medusa também foi utilizado para realizar o brute force no formulário de login do DVWA.
-- **Comando:** `bash
+- **Comando:** `
 medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \
 -m PAGE: "/dvwa/login.php" \
 -m FORM: "username=^USER^&password=^PASS^&Login=Login" \
