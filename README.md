@@ -30,11 +30,11 @@ Utilizei o módulo `smbnt` do Medusa para realizar o brute force contra o servi�
 - **Comando:** `medusa -h 192.168.56.102 -U wordlists/usuarios.txt -P wordlists/senhas.txt -M smbnt`
 
 **Resultado (Senha Encontrada):**
-![Sucesso SMB](./imagens/02-medusa-smb.png)
+![Sucesso SMB](./imagens/02-medusa-smbnt.png)
 
 **Validação do Acesso:**
 Após encontrar a senha, validei o acesso listando os compartilhamentos do servidor.
-![Acesso SMB](./imagens/03-validacao-smb.png)
+![Acesso SMB](./imagens/03-validacao-smbnt.png)
 
 ---
 
