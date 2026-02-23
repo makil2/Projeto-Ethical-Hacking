@@ -34,8 +34,8 @@ Utilizei o módulo `smbnt` do Medusa para realizar o brute force contra o servi�
 
 **Validação do Acesso:**
 Após encontrar a senha, validei o acesso listando os compartilhamentos do servidor.
-  **Comando** para validar o acesso ao SMB (listando diretórios)
-smbclient -L //192.168.56.102/ -U msfadmin
+- **Comando:** `smbclient -L //192.168.56.102/ -U msfadmin`
+  
 ![Acesso SMB](./imagens/03-validacao-smbnt.png)
 
 ---
@@ -49,6 +49,8 @@ O mesmo processo foi aplicado ao protocolo FTP para demonstrar a vulnerabilidade
 
 **Validação do Acesso:**
 Login realizado com sucesso no servidor de arquivos via terminal.
+- **Comando:** `ftp 192.168.56.102`
+
 ![Acesso FTP](./imagens/05-validacao-ftp.png)
 
 ---
