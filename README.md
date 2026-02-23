@@ -13,7 +13,7 @@ Este projeto foi desenvolvido como parte do desafio prático da **DIO (Digital I
 
 ## 📂 Estrutura do Repositório
 * [/wordlists](./wordlists): Dicionários de usuários e senhas utilizados.
-* [/imagens](./imagens): Capturas de tela das evidências dos testes.
+* [/imagens](./images): Capturas de tela das evidências dos testes.
 
 ---
 
@@ -21,7 +21,7 @@ Este projeto foi desenvolvido como parte do desafio prático da **DIO (Digital I
 
 ### 1. Preparação das Wordlists
 Iniciei o laboratório criando listas de usuários e senhas contendo credenciais comuns e as senhas padrão do sistema alvo.
-![Criação das Wordlists](./imagens/01-criacao-wordlists.png)
+![Criação das Wordlists](./images/01-criacao-wordlists.png)
 
 ---
 
@@ -30,13 +30,13 @@ Utilizei o módulo `smbnt` do Medusa para realizar o brute force contra o servi�
 - **Comando:** `medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M smbnt`
 
 **Resultado (Senha Encontrada):**
-![Sucesso SMB](./imagens/02-medusa-smbnt.png)
+![Sucesso SMB](./images/02-medusa-smbnt.png)
 
 **Validação do Acesso:**
 Após encontrar a senha, validei o acesso listando os compartilhamentos do servidor.
 - **Comando:** `smbclient -L //192.168.56.102/ -U msfadmin`
   
-![Acesso SMB](./imagens/03-validacao-smbnt.png)
+![Acesso SMB](./images/03-validacao-smbnt.png)
 
 ---
 
@@ -45,13 +45,13 @@ O mesmo processo foi aplicado ao protocolo FTP para demonstrar a vulnerabilidade
 - **Comando:** `medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M ftp`
 
 **Resultado (Senha Encontrada):**
-![Sucesso FTP](./imagens/04-medusa-ftp.png)
+![Sucesso FTP](./images/04-medusa-ftp.png)
 
 **Validação do Acesso:**
 Login realizado com sucesso no servidor de arquivos via terminal.
 - **Comando:** `ftp 192.168.56.102`
 
-![Acesso FTP](./imagens/05-validacao-ftp.png)
+![Acesso FTP](./images/05-validacao-ftp.png)
 
 ---
 
@@ -64,10 +64,10 @@ medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \
 -m "FAIL=Login failed" -t 6 `
 
 **Resultado Medusa Web:**
-![Sucesso Web](./imagens/06-medusa-web.png)
+![Sucesso Web](./images/06-medusa-web.png)
 
 **Login Efetuado com Sucesso:**
-![Acesso Web](./imagens/07-validacao-web.png)
+![Acesso Web](./images/07-validacao-web.png)
 
 ## 🛡️ Conclusões e Medidas de Defesa
 A execução deste laboratório permitiu compreender como senhas fracas e protocolos mal configurados facilitam a intrusão. Para mitigar esses riscos, recomenda-se:
